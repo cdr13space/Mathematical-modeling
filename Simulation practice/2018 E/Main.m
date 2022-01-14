@@ -25,3 +25,7 @@ for k = 1:20
     w2_matrix = [w2_matrix;w2]
     w3_matrix = [w3_matrix;w3]
 end
+
+w1_mean = mean(w1_matrix(2:end,:))
+w2_mean = mean(w2_matrix(2:end,:))
+w3_mean = mean(w3_matrix(2:end,:))
