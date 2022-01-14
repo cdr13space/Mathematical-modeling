@@ -54,3 +54,5 @@ ERI_mean = transpose(mean(ERI));
 ESI_mean = transpose(mean(ESI));
 SHI_mean = transpose(mean(SHI));
 indicator_mean = [ERI_mean,ESI_mean,SHI_mean];
+
+[W, FCI] = CVM(indicator_mean)
