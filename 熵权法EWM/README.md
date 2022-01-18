@@ -1,4 +1,5 @@
-参考来源：[知乎：熵权法确定权重](https://zhuanlan.zhihu.com/p/28067337)
+- GitHub Flavored Markdown不支持Latex渲染，请下载后使用VScode或Obsidian等软件配套食用
+- 参考来源：[知乎：熵权法确定权重](https://zhuanlan.zhihu.com/p/28067337)
 
 # 基本原理
 
