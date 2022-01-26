@@ -10,5 +10,5 @@
 - 层次分析法(AHP)： [Github](https://github.com/xwj770427414/Mathematical-modeling/tree/main/层次分析法AHP) / [Gitee](https://gitee.com/xwj770427414/Mathematical-modeling/tree/main/层次分析法AHP)
 - 熵权法(EWM)： [Github](https://github.com/xwj770427414/Mathematical-modeling/tree/main/熵权法EWM) / [Gitee](https://gitee.com/xwj770427414/Mathematical-modeling/tree/main/层次分析法AHP)
 - 检验方法：[Github](https://github.com/xwj770427414/Mathematical-modeling/tree/main/检验方法) / [Gitee](https://gitee.com/xwj770427414/Mathematical-modeling/tree/main/检验方法)
-  - 数据分布检验: 正态分布
+  - 正态分布检验
 - 多元线性回归(待完善): [Github](https://github.com/xwj770427414/Mathematical-modeling/tree/main/多元线性回归) / [Gitee](https://gitee.com/xwj770427414/Mathematical-modeling/tree/main/多元线性回归)
