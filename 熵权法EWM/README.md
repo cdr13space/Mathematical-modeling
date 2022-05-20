@@ -18,27 +18,41 @@
 $$
 \begin{array}{l}
 x_{i j}^{\prime}=\frac{x_{i j}-\min \left\{x_{1 j}, \ldots, x_{n j}\right\}}{\max \left\{x_{1 j}, \ldots, x_{r j}\right\}-\min \left\{x_{1 j}, \ldots, x_{n j}\right\}}
-\end{array}$$
-
+\end{array}
 $$
-\begin{array}{l}
-x_{i j}^{\prime}=\frac{\max \left\{x_{1 j}, \ldots, x_{n j}\right\}-x_{i j}}{\max \left\{x_{1 j}, \ldots, x_{n j}\right\}-\min \left\{x_{1 j}, \ldots, x_{n j}\right\}}
+$$
+\begin{array}{l}x_{i j}^{\prime}=\frac{\max \left\{x_{1 j}, \ldots, x_{n j}\right\}-x_{i j}}{\max \left\{x_{1 j}, \ldots, x_{n j}\right\}-\min \left\{x_{1 j}, \ldots, x_{n j}\right\}}
 \end{array}
 $$
 
 3. 计算第$j$项指标下第$i$个样本值占该指标的比重：
-$$p_{i j}=\frac{x_{i j}}{\sum_{i=1}^{n} x_{i j}}, \quad i=1, \cdots, n, j=1, \cdots, m$$
+$$
+\begin{array}{l}p_{i j}=\frac{x_{i j}}{\sum_{i=1}^{n} x_{i j}}, \quad i=1, \cdots, n, j=1, \cdots, m
+\end{array}
+$$
 
 4. 计算第$j$项指标的熵值：
    - 其中，$k=\frac{1}{ln(n)}>0$ 满足$e{j} \ge 0$;
-$$e_{j}=-k \sum_{i=1}^{n} p_{i j} \ln \left(p_{i j}\right), \quad j=1, \cdots, m$$
+$$
+\begin{array}{l}e_{j}=-k \sum_{i=1}^{n} p_{i j} \ln \left(p_{i j}\right), \quad j=1, \cdots, m
+\end{array}
+$$
 
 5. 计算信息熵冗余度（差异）：
-$$d_{j}=1-e_{j}, \quad j=1, \cdots, m$$
+$$
+\begin{array}{l}d_{j}=1-e_{j}, \quad j=1, \cdots, m
+\end{array}
+$$
 
 6. 计算各项指标的权重：
-$$d_{j}=1-e_{j}, \quad j=1, \cdots, mw_{j}=\frac{d_{j}}{\sum_{j=1}^{m} d_{j}}, \quad j=1, \cdots, m$$
+$$
+\begin{array}{l}d_{j}=1-e_{j}, \quad j=1, \cdots, mw_{j}=\frac{d_{j}}{\sum_{j=1}^{m} d_{j}}, \quad j=1, \cdots, m
+\end{array}
+$$
 
 7. 计算各样本的综合得分：
    - 其中，$x_{ij}$为标准化后的数据。
-$$s_{i}=\sum_{j=1}^{m} w_{j} x_{i j}, \quad i=1, \cdots, n$$
+$$
+\begin{array}{l}s_{i}=\sum_{j=1}^{m} w_{j} x_{i j}, \quad i=1, \cdots, n
+\end{array}
+$$
