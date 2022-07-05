@@ -1,18 +1,19 @@
 # Mathematical-modeling
 
-- 数学建模（国赛/美赛），常用代码Python的实现。
+- 数学建模（国赛/美赛），常用代码Python的实现
+- 算法的具体原理Markdown在Github中无法正常显示公式，建议使用Typora等编辑器打开
 - 建模绘图/科研绘图代码：[ScienceGallery](https://github.com/xwj770427414/ScienceGallery)
 - Fork, please indicate the source[@Warrick Xu](https://github.com/xwj770427414)
 
 ----------------------
 
-## 算法目录(待完善)
+## 算法目录(待补充)
 
-- 层次分析法(AHP)： [Github](https://github.com/xwj770427414/Mathematical-modeling/tree/main/层次分析法AHP) / [Gitee](https://gitee.com/xwj770427414/Mathematical-modeling/tree/main/层次分析法AHP)
-- 熵权法(EWM)： [Github](https://github.com/xwj770427414/Mathematical-modeling/tree/main/熵权法EWM) / [Gitee](https://gitee.com/xwj770427414/Mathematical-modeling/tree/main/层次分析法AHP)
-- 检验方法：[Github](https://github.com/xwj770427414/Mathematical-modeling/tree/main/检验方法) / [Gitee](https://gitee.com/xwj770427414/Mathematical-modeling/tree/main/检验方法)
+- [层次分析法(AHP)](https://github.com/xwj770427414/Mathematical-modeling/tree/main/层次分析法AHP) 
+- [熵权法(EWM)](https://github.com/xwj770427414/Mathematical-modeling/tree/main/熵权法EWM)
+- [检验方法](https://github.com/xwj770427414/Mathematical-modeling/tree/main/检验方法) 
   - 正态分布检验
-- 多元回归: [Github](https://github.com/xwj770427414/Mathematical-modeling/tree/main/多元回归) / [Gitee](https://gitee.com/xwj770427414/Mathematical-modeling/tree/main/多元回归)
-- 时间序列分析与预测：[Github](https://github.com/xwj770427414/Mathematical-modeling/tree/main/时间序列分析与预测) / [Gitee](https://gitee.com/xwj770427414/Mathematical-modeling/tree/main/时间序列分析与预测)
+- [多元回归](https://github.com/xwj770427414/Mathematical-modeling/tree/main/多元回归) 
+- [时间序列分析与预测](https://github.com/xwj770427414/Mathematical-modeling/tree/main/时间序列分析与预测)
   - 时间序列处理
   - ARIMA建模与预测
