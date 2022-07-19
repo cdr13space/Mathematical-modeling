@@ -1,14 +1,3 @@
-"""
--------------------------------------
-# -*- coding: utf-8 -*-
-# @Time    : 2021/1/20 18:51:52
-# @Author  : Giyn
-# @Email   : giyn.jy@gmail.com
-# @File    : TOPSIS.py
-# @Software: PyCharm
--------------------------------------
-"""
-
 import pandas as pd
 import numpy as np
 
