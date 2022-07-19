@@ -52,33 +52,87 @@
    | 酒样品 | 第一组评分 | 第二组评分 | 酒样品 | 第一组评分 | 第二组评分 |
    | 1      | 62.7       | 68.1       | 1      | 82         | 77.9       |
    | 2      | 80.3       | 74         | 2      | 74.2       | 75.8       |
-   | 3      | 80.4       | 74.6       | 3      | 85.3       | 75.6       |
-   | 4      | 68.6       | 71.2       | 4      | 79.4       | 76.9       |
    | ...    | ...        | ...        | ...    | ...        | ...        |
    | 26     | 73.8       | 72         | 26     | 81.3       | 74.3       |
    | 27     | 73         | 71.5       | 27     | 64.8       | 77         |
    |        |            |            | 28     | 81.3       | 79.6       |
 
-2.  **参数检验**需要已知总体分布类型，对未知参数进行统计推断，依赖于特定分布类型，比较的是参数 。而**非参数检验**对总体的分布类型不作严格要求，不受分布类型的影响，比较的是总体分布位置。因此，本文针对红葡萄酒和白葡萄酒的两组评分结果，对其进行**非参数检验**。
+2. **参数检验**需要已知总体分布类型，对未知参数进行统计推断，依赖于特定分布类型，比较的是参数 。而**非参数检验**对总体的分布类型不作严格要求，不受分布类型的影响，比较的是总体分布位置。因此，本文针对红葡萄酒和白葡萄酒的两组评分结果，对其进行**非参数检验**。
+
+3. 以**Wilcoxon 符号秩检验**的方法作显著性分析为例，进行检验和说明
+
+   - 假设检验：$H_{0}$-两组评分结果没有显著性差异，$H_{1}$-两组评分结果有显著性差异；
+   - 经检验，在$\alpha=0.05$的显著性水平下，$P$值均小于$0.05$，拒绝原假设。因此，两组评酒员的评价结果具有显著性差异；
 
    ```python
+   import pandas as pd
    from scipy import stats
-   """
-   Shapior-wilk检验主要应用于小样本(3<n<50)的情况;
-   H0: 该变量服从正态分布,H1: 该变量不服从正态分布;
-   """
-   shapiro_test = stats.shapiro(data_1['第一组评分'])
-   print("Shapiro wilk Test Statstic:{}   Pvalue:{}".format(shapiro_test.statistic,shapiro_test.pvalue))
-   shapiro_test = stats.shapiro(data_1['第二组评分'])
-   print("Shapiro wilk Test Statstic:{}   Pvalue:{}".format(shapiro_test.statistic,shapiro_test.pvalue))
-   shapiro_test = stats.shapiro(data_2['第一组评分'])
-   print("Shapiro wilk Test Statstic:{}   Pvalue:{}".format(shapiro_test.statistic,shapiro_test.pvalue))
-   shapiro_test = stats.shapiro(data_2['第二组评分'])
-   print("Shapiro wilk Test Statstic:{}   Pvalue:{}".format(shapiro_test.statistic,shapiro_test.pvalue))
+   data_1 = pd.read_excel('整理评分.xlsx',sheet_name='红葡萄酒')
+   data_2 = pd.read_excel('整理评分.xlsx',sheet_name='白葡萄酒')
+   
+   statistic, pvalue = scipy.stats.wilcoxon(data_1['第一组评分'],
+                                            data_1['第二组评分'],
+                                            zero_method='wilcox',
+                                            alternative='two-sided')
+   print("Wilcoxon Test Statstic:{}   Pvalue:{}".format(statistic,pvalue))
+   
+   statistic, pvalue = scipy.stats.wilcoxon(data_2['第一组评分'],
+                                            data_2['第二组评分'],
+                                            zero_method='wilcox',
+                                            alternative='two-sided')
+   print("Wilcoxon Test Statstic:{}   Pvalue:{}".format(statistic,pvalue)) 
+   
    ```
 
-   
+   <img src="https://xwj770427414.oss-cn-beijing.aliyuncs.com/img/image-20220719143323652.png" alt="image-20220719143323652" style="zoom:80%;" />
 
-#### 第二小问-哪一组结果更可
+#### 第二小问-哪一组结果更可信
 
 1. **方法：**比较方差大小，Cronbach可信度系数，比较酒样F值和评酒员F值的相对大小，Spearman秩相关系数，肯德尔和谐系数法。
+2. 以距离法为例，进行检验说明
+
+   - 首先计算每一组每名品酒员对27 种红葡萄酒和28 种白葡萄酒的评分和平均评分；
+   - 将所有评分分别从高到低进行排序，并记录排序编号。得到每个酒样品在不同品酒员下的评分排序。
+
+| 红酒1组 | 员1  | 员2  | 员3  | 员4  | 员5  | 员6  | 员7  | 员8  | 员9  | 员10 | 平均 |
+| ------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| 样品1   | 27   | 22   | 25   | 27   | 13   | 22   | 15   | 23   | 24   | 27   | 24   |
+| 样品2   | 13   | 10   | 5    | 4    | 4    | 9    | 1    | 7    | 4    | 20   | 4    |
+| ...     | ...  | ...  | ...  | ...  | ...  | ...  | ...  | ...  | ...  | ...  | ...  |
+| 样品26  | 10   | 12   | 19   | 22   | 12   | 18   | 17   | 13   | 17   | 10   | 14   |
+| 样品26  | 17   | 17   | 23   | 17   | 11   | 12   | 14   | 18   | 5    | 17   | 17   |
+
+3. 分别求出10名品酒员对同一种红葡萄酒评分的排序与平均评分的排序之间的欧氏距离，再将27种红葡萄酒评分的欧氏距离求和得到第一组对红葡萄酒评分排序的总和欧式距离。
+   $$
+   d=\sum_{j=1}^{27}\sqrt{\sum_{i=1}^{10}(x_{ij}-\overline{x}_{j})}
+   $$
+
+   |      | 第一组红葡萄d1 | 第一组白葡萄d2 | 第一组红葡萄d3 | 第二组白葡萄d4 |
+   | ---- | -------------- | -------------- | -------------- | -------------- |
+   | 距离 | 504.16         | 666.73         | 513.97         | 937.27         |
+
+4. 根据计算结果可知，$d_{1}<d_{3}, d_{2}<d_{3}$。因此，第一组各评酒员对葡萄酒的评分更接近10 名评酒员的平均评分，因而说明第一组评分一致性较好，更为可信。
+
+```python
+data_3 = pd.read_excel('整理评分.xlsx',sheet_name='第一组红葡萄酒的评分',header=None).iloc[32:,1:].astype(np.int32)
+data_4 = pd.read_excel('整理评分.xlsx',sheet_name='第二组红葡萄酒的评分',header=None).iloc[32:,1:].astype(np.int32)
+data_5 = pd.read_excel('整理评分.xlsx',sheet_name='第一组白葡萄酒的评分',header=None).iloc[33:,1:].astype(np.int32)
+data_6 = pd.read_excel('整理评分.xlsx',sheet_name='第二组白葡萄酒的评分',header=None).iloc[33:,1:].astype(np.int32)
+
+def func_dis(data):
+    data_all = data.iloc[:,:-1].values
+    data_mean = data.iloc[:,-1].values.reshape(-1,1)
+    temp = (data_all-data_mean)**2
+    temp = temp.sum(axis=1)
+    temp = np.sqrt(temp).sum()
+    return np.round(temp,2)
+
+print('第一组红葡萄酒的总欧氏距离：',func_dis(data_3))
+print('第二组红葡萄酒的总欧氏距离：',func_dis(data_4))
+print('第一组白葡萄酒的总欧氏距离：',func_dis(data_5))
+print('第二组白葡萄酒的总欧氏距离：',func_dis(data_6))
+```
+
+<img src="https://xwj770427414.oss-cn-beijing.aliyuncs.com/img/image-20220719153750341.png" alt="image-20220719153750341" style="zoom:80%;" />
+
+## 问题2
