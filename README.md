@@ -1,6 +1,6 @@
 # Mathematical-modeling
 
-- 数学建模（国赛/美赛），常用代码Python/R的实现
+- 数学建模（国赛/美赛），常用算法Python/R的实现
 - 算法的具体原理Markdown在Github中无法正常显示公式，建议使用Typora等编辑器打开
 - 建模绘图/科研绘图代码：[ScienceGallery](https://github.com/xwj770427414/ScienceGallery)
 - Fork, please indicate the source[@Warrick Xu](https://github.com/xwj770427414)
